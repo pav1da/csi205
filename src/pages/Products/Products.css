@@ -1,8 +1,0 @@
-.items-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    overflow-y: auto;
-    height: 650px;
-    align-items: start;
-}
