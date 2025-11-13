@@ -30,11 +30,11 @@ function App() {
   useEffect(() => setProducts(fetchProducts()), []);
   useEffect(() => console.log(products), [products]);
 
-  return (
-    <BrowserRouter basename="/csi205/">
-      {token === "" ? (
-        <Login setToken={setToken} setRole={setRole}/>
-      ) : (
+  if (token === "") {
+    return <Login setToken={setToken} setRole={setRole} />;
+  } else {
+    return (
+      <BrowserRouter basename="/csi205/">
         <Routes>
           <Route element={<AppLayout products={products} carts={carts} />}>
             <Route path="/home" element={<Home />} />
@@ -59,9 +59,9 @@ function App() {
             <Route path="*" element={<ForwardToHome />} />
           </Route>
         </Routes>
-      )}
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
