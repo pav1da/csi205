@@ -83,12 +83,12 @@ const Animation = () => {
       else if (event.key === "4") btnHuman();
       else if (event.key === "5") btnCartoon();
       else if (event.key === "6") btnLogo();
-      else if (event.key === "0") setBallSrc(defaultImg); 
+      else if (event.key === "0") setBallSrc(defaultImg);
     };
 
     document.addEventListener("keydown", handleKeyboard);
     return () => document.removeEventListener("keydown", handleKeyboard);
-  });
+  }, []);
 
   return (
     <div className="d-flex justify-content-center align-items-center w-100 h-auto bg-white rounded-4 py-3">

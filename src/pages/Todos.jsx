@@ -77,7 +77,7 @@ const Todos = () => {
               aria-label="Default select example"
               className="w-25"
               value={itemsPerPage}
-              onChange={(e) => setItemPerPage(e.target.value)}
+              onChange={(e) => setItemPerPage(Number(e.target.value))}
             >
               <option value={5}>5 items per page</option>
               <option value={10}>10 items per page</option>
